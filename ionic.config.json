@@ -1,0 +1,7 @@
+{
+  "name": "ulam-for-today",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
