@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { IonContent, IonPage } from "@ionic/react";
-import "./UlamPage.scss";
+import "./MainPage.scss";
 import { UlamCard } from "../components/Ulam/Ulam";
 import { useUlam } from "../services/UlamServices";
 import { Loader } from "../components/Loader/Loader";
 import { Link } from "react-router-dom";
 
-const UlamPage: React.FC = () => {
+const MainPage: React.FC = () => {
   const { ulam } = useUlam();
-  const [titleClass, setTitleClass] = useState("hidden");
-
-  const title = "What's our ulam for today?";
+  const [display, setDisplay] = useState("hidden");
 
   const ulamTag =
     ulam === undefined || ulam.length === 0 ? (
@@ -35,20 +33,18 @@ const UlamPage: React.FC = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      setTitleClass("main-wrapper shown");
+      setDisplay("shown");
     }, 1000);
   }, []);
 
   return (
-    <IonPage>
-      <IonContent>
-        <div className={titleClass}>
-          <h1 id="title">{title}</h1>
-          {ulamTag}
-        </div>
-      </IonContent>
-    </IonPage>
+    <div className="main-container">
+      <div id={display}>
+        <h1>What's our ulam for today?</h1>
+        {ulamTag}
+      </div>
+    </div>
   );
 };
 
-export default UlamPage;
+export default MainPage;

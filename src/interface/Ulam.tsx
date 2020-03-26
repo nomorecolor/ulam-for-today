@@ -1,4 +1,4 @@
-export interface Ulam {
+export interface UlamProp {
   id?: string;
   name: string;
   picLink: string;
@@ -11,10 +11,4 @@ export interface Ulam {
 
 export interface UlamDetailsProp {
   id?: string;
-}
-
-export interface UlamProp {
-  id?: string;
-  name: string;
-  picLink: string;
 }

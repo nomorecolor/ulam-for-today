@@ -1,17 +1,13 @@
 import React from "react";
-import { Redirect, Route } from "react-router-dom";
 import {
-  IonApp,
-  IonIcon,
-  IonLabel,
-  IonRouterOutlet,
-  IonTabBar,
-  IonTabButton,
-  IonTabs
-} from "@ionic/react";
+  Redirect,
+  Route,
+  BrowserRouter as Router,
+  Switch
+} from "react-router-dom";
+import { IonApp, IonRouterOutlet } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
-import { train } from "ionicons/icons";
-import UlamPage from "./pages/UlamPage";
+import MainPage from "./pages/MainPage";
 import UlamDetailsPage from "./pages/UlamDetailsPage";
 
 /* Core CSS required for Ionic components to work properly */
@@ -32,32 +28,48 @@ import "@ionic/react/css/display.css";
 
 /* Theme variables */
 import "./theme/variables.css";
+import "./App.scss";
 
-const App: React.FC = () => (
-  <IonApp>
-    <IonReactRouter>
-      <IonTabs>
-        <IonRouterOutlet>
-          <Route path="/ulam-for-today" component={UlamPage} exact={true} />
-          <Route
-            path="/ulam-for-today/ulam-details/:id"
-            component={UlamDetailsPage}
-          />
-          <Route
-            path="/"
-            render={() => <Redirect to="/ulam-for-today" />}
-            exact={true}
-          />
-        </IonRouterOutlet>
-        <IonTabBar slot="bottom">
-          <IonTabButton tab="ulam-for-today" href="/ulam-for-today">
-            <IonIcon icon={train} />
-            <IonLabel>Ulam for today</IonLabel>
-          </IonTabButton>
-        </IonTabBar>
-      </IonTabs>
-    </IonReactRouter>
-  </IonApp>
-);
+const App: React.FC = () => {
+  return (
+    <Router>
+      <Switch>
+        <Route path="/ulam-for-today" component={MainPage} exact={true} />
+        <Route
+          path="/ulam-for-today/ulam-details/:id"
+          component={UlamDetailsPage}
+        />
+        <Route
+          path="/"
+          render={() => <Redirect to="/ulam-for-today" />}
+          exact={true}
+        />
+      </Switch>
+    </Router>
+  );
+};
 
 export default App;
+
+// eslint-disable-next-line no-lone-blocks
+{
+  /*
+  <IonApp className="main-container">
+  <IonReactRouter>
+    
+    <IonRouterOutlet>
+      <Route path="/ulam-for-today" component={MainPage} exact={true} />
+      <Route
+        path="/ulam-for-today/ulam-details/:id"
+        component={UlamDetailsPage}
+      />
+      <Route
+        path="/"
+        render={() => <Redirect to="/ulam-for-today" />}
+        exact={true}
+      />
+    </IonRouterOutlet>
+  </IonReactRouter>
+</IonApp>
+*/
+}

@@ -8,11 +8,9 @@ const UlamDetailsPage: React.FC<UlamDetailsProp> = () => {
   const { id } = useParams();
 
   return (
-    <IonPage>
-      <IonContent>
-        <UlamDetails id={id}></UlamDetails>
-      </IonContent>
-    </IonPage>
+    <div className="main-container">
+      <UlamDetails id={id}></UlamDetails>
+    </div>
   );
 };
 

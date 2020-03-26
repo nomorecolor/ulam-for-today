@@ -2,13 +2,13 @@ import { useState, useEffect } from "react";
 import firebase from "../firebase-config/firebase-config";
 
 import "firebase/firestore";
-import { Ulam } from "../interface/Ulam";
+import { UlamProp } from "../interface/Ulam";
 
 const db = firebase.firestore();
 
 export const useUlam = (id?: string | null | undefined) => {
   const [error, setError] = useState(false);
-  const [ulam, setUlam] = useState<Ulam[]>([]);
+  const [ulam, setUlam] = useState<UlamProp[]>([]);
 
   useEffect(() => {
     console.log(id);
@@ -21,7 +21,7 @@ export const useUlam = (id?: string | null | undefined) => {
             .onSnapshot(
               doc => {
                 const result = [];
-                const item: Ulam = {
+                const item: UlamProp = {
                   id: doc.id,
                   name: doc.get("name"),
                   picLink: doc.get("picLink"),
@@ -40,9 +40,9 @@ export const useUlam = (id?: string | null | undefined) => {
             .collection("ulam")
             .onSnapshot(
               doc => {
-                const result: Ulam[] = [];
+                const result: UlamProp[] = [];
                 doc.forEach(data => {
-                  const item: Ulam = {
+                  const item: UlamProp = {
                     id: data.id,
                     name: data.get("name"),
                     picLink: data.get("picLink"),
@@ -65,11 +65,11 @@ export const useUlam = (id?: string | null | undefined) => {
   return { error, ulam };
 };
 
-export const createUlam = (ulam: Ulam) => {
+export const createUlam = (ulam: UlamProp) => {
   return db.collection("ulam").add(ulam);
 };
 
-export const updateUlam = (id: string, ulam: Ulam) => {
+export const updateUlam = (id: string, ulam: UlamProp) => {
   return db
     .collection("ulam")
     .doc(id)

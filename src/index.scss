@@ -1,0 +1,37 @@
+@font-face {
+  font-family: "Milestone";
+  src: url("./fonts/milestone.woff2") format("woff2"),
+    url("./fonts/milestone.woff") format("woff");
+}
+
+@font-face {
+  font-family: "BeautyMountain";
+  src: url("./fonts/beautymountain.woff2") format("woff2"),
+    url("./fonts/beautymountain.woff") format("woff");
+}
+
+@font-face {
+  font-family: "BiteChocolate";
+  src: url("./fonts/bitechocolate.woff2") format("woff2"),
+    url("./fonts/bitechocolate.woff") format("woff");
+}
+
+body {
+  background-color: pink;
+  position: relative;
+  overflow-y: auto;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}

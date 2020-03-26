@@ -1,0 +1,20 @@
+ion-content ion-toolbar {
+  --background: translucent;
+}
+
+#hidden {
+  opacity: 0;
+}
+
+#shown {
+  opacity: 1;
+  transition: opacity 1.5s ease-in;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 85vh;
+
+  max-width: 100%;
+}

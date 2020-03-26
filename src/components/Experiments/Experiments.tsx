@@ -2,11 +2,11 @@ import React from "react";
 
 import data from "../../firebase-config/mock-recipe.json";
 import { createUlam } from "../../services/UlamServices";
-import { Ulam } from "../../interface/Ulam";
+import { UlamProp } from "../../interface/Ulam";
 import "./Experiments.css";
 
 export const Experiment = () => {
-  const mockRecipe = (data as unknown) as Ulam;
+  const mockRecipe = (data as unknown) as UlamProp;
 
   const handleSubmit = () => {
     createUlam(mockRecipe);
