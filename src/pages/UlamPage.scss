@@ -1,0 +1,17 @@
+ion-content ion-toolbar {
+  --background: translucent;
+}
+
+#title {
+  font-family: Milestone;
+  font-size: xx-large;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.shown {
+  opacity: 1;
+  transition: opacity 1.5s ease-in;
+}

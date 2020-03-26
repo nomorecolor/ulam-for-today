@@ -19,6 +19,9 @@
 .env.production.local
 .vscode
 
+/src/fonts
+/src/firebase-config
+
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*

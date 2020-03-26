@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'Milestone';
+    src: url('./fonts/milestone.woff2') format('woff2'),
+        url('./fonts/milestone.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'BeautyMountain';
+    src: url('./fonts/beautymountain.woff2') format('woff2'),
+        url('./fonts/beautymountain.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'BiteChocolate';
+    src: url('./fonts/bitechocolate.woff2') format('woff2'),
+        url('./fonts/bitechocolate.woff') format('woff');
+}
