@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { IonContent, IonPage } from "@ionic/react";
 import "./MainPage.scss";
 import { UlamCard } from "../components/Ulam/Ulam";
 import { useUlam } from "../services/UlamServices";
@@ -22,7 +21,7 @@ const MainPage: React.FC = () => {
             <Link
               style={{ textDecoration: "none" }}
               key={id}
-              to={`/ulam-for-today/ulam-details/${id}`}
+              to={`/ulam-for-today/${id}`}
             >
               <UlamCard key={id} id={id} name={name} picLink={picLink} />
             </Link>

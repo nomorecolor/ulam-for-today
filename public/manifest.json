@@ -1,5 +1,5 @@
 {
-  "short_name": "Ulam for today",
+  "short_name": "Ulam",
   "name": "Ulam for today",
   "icons": [
     {
@@ -15,7 +15,7 @@
     }
   ],
   "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff"
+  "display": "fullscreen",
+  "theme_color": "#ffc0cb",
+  "background_color": "#ffc0cb"
 }

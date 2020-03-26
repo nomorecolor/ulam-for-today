@@ -5,8 +5,6 @@ import {
   BrowserRouter as Router,
   Switch
 } from "react-router-dom";
-import { IonApp, IonRouterOutlet } from "@ionic/react";
-import { IonReactRouter } from "@ionic/react-router";
 import MainPage from "./pages/MainPage";
 import UlamDetailsPage from "./pages/UlamDetailsPage";
 
@@ -34,16 +32,13 @@ const App: React.FC = () => {
   return (
     <Router>
       <Switch>
-        <Route path="/ulam-for-today" component={MainPage} exact={true} />
+        <Route path="/" component={MainPage} exact={true} />
         <Route
-          path="/ulam-for-today/ulam-details/:id"
+          path="/ulam-for-today/:id"
           component={UlamDetailsPage}
-        />
-        <Route
-          path="/"
-          render={() => <Redirect to="/ulam-for-today" />}
           exact={true}
         />
+        <Route path="/" render={() => <Redirect to="/" />} />
       </Switch>
     </Router>
   );
