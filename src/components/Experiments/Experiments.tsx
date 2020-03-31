@@ -1,15 +1,19 @@
 import React from "react";
 
 import data from "../../firebase-config/mock-recipe.json";
-import { createUlam } from "../../services/UlamServices";
+import { createUlam, createUlamWithId } from "../../services/UlamServices";
 import { UlamProp } from "../../interface/Ulam";
 import "./Experiments.css";
 
-export const Experiment = () => {
+const Experiment = () => {
   const mockRecipe = (data as unknown) as UlamProp;
 
   const handleSubmit = () => {
-    createUlam(mockRecipe);
+    console.log(mockRecipe.name.toLowerCase().replace(/ /g, "-"));
+    createUlamWithId(
+      mockRecipe.name.toLowerCase().replace(/ /g, "-"),
+      mockRecipe
+    );
   };
 
   return (
@@ -18,3 +22,5 @@ export const Experiment = () => {
     </>
   );
 };
+
+export default Experiment;

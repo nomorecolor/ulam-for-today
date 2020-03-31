@@ -56,8 +56,8 @@ export const UlamDetails: React.FC<UlamDetailsProp> = ({ id }) => {
   return (
     <div id="ulam-details" className="main-container">
       {ulam.map(x => {
+        console.log(ulam);
         const { id, name, picLink, recipe } = x;
-
         return (
           <div key={id}>
             <h1>{name}</h1>
@@ -75,7 +75,7 @@ export const UlamDetails: React.FC<UlamDetailsProp> = ({ id }) => {
 
             <section id="steps-container">
               <h2>Steps</h2>
-              <ul id="steps-list">
+              <ol id="steps-list">
                 {recipe?.steps.map(step => {
                   return (
                     <div id="description">
@@ -94,7 +94,7 @@ export const UlamDetails: React.FC<UlamDetailsProp> = ({ id }) => {
                     </div>
                   );
                 })}
-              </ul>
+              </ol>
             </section>
 
             <section id="plating-container">

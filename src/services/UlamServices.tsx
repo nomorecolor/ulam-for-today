@@ -69,6 +69,13 @@ export const createUlam = (ulam: UlamProp) => {
   return db.collection("ulam").add(ulam);
 };
 
+export const createUlamWithId = (id: string, ulam: UlamProp) => {
+  return db
+    .collection("ulam")
+    .doc(id)
+    .set(ulam);
+};
+
 export const updateUlam = (id: string, ulam: UlamProp) => {
   return db
     .collection("ulam")

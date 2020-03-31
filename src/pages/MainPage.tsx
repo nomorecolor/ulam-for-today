@@ -14,7 +14,7 @@ const MainPage: React.FC = () => {
       <Loader />
     ) : (
       <>
-        {ulam.slice(0, 1).map(x => {
+        {ulam.map(x => {
           const { id, name, picLink } = x;
 
           return (

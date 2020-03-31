@@ -1,5 +1,4 @@
 import React from "react";
-import { IonPage, IonContent } from "@ionic/react";
 import { UlamDetailsProp } from "../interface/Ulam";
 import { UlamDetails } from "../components/Ulam/Ulam";
 import { useParams } from "react-router";

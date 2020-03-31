@@ -40,7 +40,9 @@
       list-style-type: none;
       border: 1px black solid;
       border-radius: 5px;
+      box-shadow: 5px 5px black;
       padding: 10px;
+      margin: 3px;
     }
 
     // li:nth-child(odd) {
@@ -56,11 +58,17 @@
 
     #steps-list {
       padding: 0;
-      list-style-type: none;
+      list-style-position: inside;
     }
 
     div {
       margin-bottom: 10px;
+    }
+
+    #procedures {
+      li {
+        list-style-type: disc;
+      }
     }
   }
 }

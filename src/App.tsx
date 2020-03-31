@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import MainPage from "./pages/MainPage";
 import UlamDetailsPage from "./pages/UlamDetailsPage";
+import Experiment from "./components/Experiments/Experiments";
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -38,6 +39,7 @@ const App: React.FC = () => {
           component={UlamDetailsPage}
           exact={true}
         />
+        <Route path="/experiment" component={Experiment} exact={true} />
         <Route path="/" render={() => <Redirect to="/" />} />
       </Switch>
     </Router>
